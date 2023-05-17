@@ -7,6 +7,7 @@ import com.mkboss.MkbossManage.Email.EmailService;
 import com.mkboss.MkbossManage.Entity.User;
 import com.mkboss.MkbossManage.Entity.VerificationToken;
 import com.mkboss.MkbossManage.Event.RegistrationCompleteEvent;
+import com.mkboss.MkbossManage.Model.PasswordChangeModel;
 import com.mkboss.MkbossManage.Model.UserModel;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -64,6 +65,16 @@ public class AuthenticationController {
         User user = verificationToken.getUser();
         resendVerificationTokenMail(user, applicationUrl(request), verificationToken);
         return "Verification Link Sent";
+    }
+
+    @PostMapping("/changePassword")
+    public String changePassword(@RequestParam PasswordChangeModel passwordChangeModel){
+        User user = authenticationService.findUserByEmail(passwordChangeModel.getEmail());
+        if (!authenticationService.checkIfValidOldPassword(user, passwordChangeModel.getOldPassword())){
+            return "Old and New password do not match";
+        }
+        authenticationService.changePassword(user, passwordChangeModel.getNewPassword());
+        return "Change password successfully";
     }
 
     private void resendVerificationTokenMail(User user, String applicationUrl, VerificationToken verificationToken) {

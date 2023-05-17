@@ -142,6 +142,17 @@ public class AuthenticationService {
         return verificationToken;
     }
 
+    public void changePassword(User user, String newPassword){
+        user.setPassword(passwordEncoder.encode(newPassword));
+        userRepository.save(user);
+    }
+
+    public boolean checkIfValidOldPassword(User user, String oldPassword){
+        return passwordEncoder.matches(user.getPassword(), oldPassword);
+    }
+
+
+
     public User findUserByEmail(String email){
         return userRepository.findByEmail(email).orElseThrow();
     }
