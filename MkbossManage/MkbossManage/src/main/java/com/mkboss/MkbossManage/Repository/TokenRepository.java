@@ -1,6 +1,5 @@
 package com.mkboss.MkbossManage.Repository;
 
-import ch.qos.logback.core.testUtil.MockInitialContext;
 import com.mkboss.MkbossManage.Entity.Token;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

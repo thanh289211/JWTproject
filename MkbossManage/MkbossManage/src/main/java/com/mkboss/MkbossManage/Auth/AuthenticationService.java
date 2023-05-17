@@ -151,8 +151,6 @@ public class AuthenticationService {
         return passwordEncoder.matches(user.getPassword(), oldPassword);
     }
 
-
-
     public User findUserByEmail(String email){
         return userRepository.findByEmail(email).orElseThrow();
     }
