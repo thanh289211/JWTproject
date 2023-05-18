@@ -26,16 +26,16 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public Product updateProduct(ProductModel productModel) {
-
+        return null;
     }
 
     @Override
     public Product deleteProduct(ProductModel productModel) {
-
+        return null;
     }
 
     @Override
     public List<Product> getProducts() {
-
+        return null;
     }
 }
