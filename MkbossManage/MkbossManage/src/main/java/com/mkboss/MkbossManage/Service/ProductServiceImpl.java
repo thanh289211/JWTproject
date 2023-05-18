@@ -25,17 +25,28 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public Product updateProduct(ProductModel productModel) {
-        return null;
+    public Product updateProduct(long id, ProductModel productModel) {
+        if (productModel.getId() != id){
+            return null;
+        }
+        var product = productRepository.findById(id).orElseThrow();
+        product.setName(productModel.getName());
+        product.setDescription(productModel.getDescription());
+        product.setPrice(productModel.getPrice());
+        product.setStock(productModel.getStock());
+        productRepository.save(product);
+        return product;
     }
 
     @Override
-    public Product deleteProduct(ProductModel productModel) {
+    public Product deleteProduct(long id) {
+        var product = productRepository.findById(id).orElseThrow();
+        productRepository.delete(product);
         return null;
     }
 
     @Override
     public List<Product> getProducts() {
-        return null;
+        return productRepository.findAll();
     }
 }

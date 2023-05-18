@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductModel {
+    private int id;
     private String name;
     private String description;
     private double price;

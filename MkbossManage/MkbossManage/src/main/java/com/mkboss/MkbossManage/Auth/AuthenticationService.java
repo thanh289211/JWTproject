@@ -5,6 +5,7 @@ import com.mkboss.MkbossManage.Config.JwtService;
 import com.mkboss.MkbossManage.Entity.Token;
 import com.mkboss.MkbossManage.Entity.User;
 import com.mkboss.MkbossManage.Entity.VerificationToken;
+import com.mkboss.MkbossManage.Enum.Role;
 import com.mkboss.MkbossManage.Enum.TokenType;
 import com.mkboss.MkbossManage.Model.UserModel;
 import com.mkboss.MkbossManage.Repository.TokenRepository;
@@ -39,6 +40,9 @@ public class AuthenticationService {
                 .password(passwordEncoder.encode(userModel.getPassword()))
                 .role(userModel.getRole())
                 .build();
+        if (user.getRole() == Role.ADMIN){
+            user.setEnabled(true);
+        }
         var savedUser = userRepository.save(user);
         var jwtToken = jwtService.generateToken(user);
         var refreshToken = jwtService.generateRefreshToken(user);

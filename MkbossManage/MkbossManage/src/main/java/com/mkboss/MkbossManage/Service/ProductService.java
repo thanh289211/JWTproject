@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ProductService {
     Product addProduct(ProductModel productModel);
-    Product updateProduct(ProductModel productModel);
-    Product deleteProduct(ProductModel productModel);
+    Product updateProduct(long id, ProductModel productModel);
+    Product deleteProduct(long id);
     List<Product> getProducts();
 }
