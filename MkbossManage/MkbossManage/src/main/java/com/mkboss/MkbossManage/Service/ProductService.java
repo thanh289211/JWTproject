@@ -1,10 +1,13 @@
 package com.mkboss.MkbossManage.Service;
 
+import com.mkboss.MkbossManage.Entity.Product;
 import com.mkboss.MkbossManage.Model.ProductModel;
 
+import java.util.List;
+
 public interface ProductService {
-    void addProduct(ProductModel productModel);
-    void updateProduct(ProductModel productModel);
-    void deleteProduct(ProductModel productModel);
-    void getProducts();
+    Product addProduct(ProductModel productModel);
+    Product updateProduct(ProductModel productModel);
+    Product deleteProduct(ProductModel productModel);
+    List<Product> getProducts();
 }

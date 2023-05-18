@@ -6,12 +6,14 @@ import com.mkboss.MkbossManage.Repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService{
     private final ProductRepository productRepository;
     @Override
-    public void addProduct(ProductModel productModel) {
+    public Product addProduct(ProductModel productModel) {
         Product product = Product.builder()
                 .name(productModel.getName())
                 .description(productModel.getDescription())
@@ -19,20 +21,21 @@ public class ProductServiceImpl implements ProductService{
                 .stock(productModel.getStock())
                 .build();
         productRepository.save(product);
+        return product;
     }
 
     @Override
-    public void updateProduct(ProductModel productModel) {
-
-    }
-
-    @Override
-    public void deleteProduct(ProductModel productModel) {
+    public Product updateProduct(ProductModel productModel) {
 
     }
 
     @Override
-    public void getProducts() {
+    public Product deleteProduct(ProductModel productModel) {
+
+    }
+
+    @Override
+    public List<Product> getProducts() {
 
     }
 }
