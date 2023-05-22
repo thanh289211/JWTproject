@@ -1,9 +1,9 @@
 package com.mkboss.MkbossManage.Controller;
 
-import com.mkboss.MkbossManage.Auth.AuthenticationRequest;
-import com.mkboss.MkbossManage.Auth.AuthenticationResponse;
-import com.mkboss.MkbossManage.Auth.AuthenticationService;
-import com.mkboss.MkbossManage.Email.EmailService;
+import com.mkboss.MkbossManage.Dto.AuthenticationRequest;
+import com.mkboss.MkbossManage.Dto.AuthenticationResponse;
+import com.mkboss.MkbossManage.Service.AuthenticationService;
+import com.mkboss.MkbossManage.Service.EmailService;
 import com.mkboss.MkbossManage.Entity.User;
 import com.mkboss.MkbossManage.Entity.VerificationToken;
 import com.mkboss.MkbossManage.Event.RegistrationCompleteEvent;

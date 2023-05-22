@@ -6,21 +6,21 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.util.Date;
 
 @Entity
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
+public class UserProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String name;
-    private String description;
-    private double price;
-    private int stock;
-    @OneToMany(mappedBy = "product")
-    private List<UserProduct> userProducts;
+    private Date buyTime;
+    @ManyToOne
+    private User user;
+    @ManyToOne
+    private Product product;
+
 }

@@ -1,4 +1,4 @@
-package com.mkboss.MkbossManage.Email;
+package com.mkboss.MkbossManage.Service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;

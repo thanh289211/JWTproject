@@ -1,4 +1,4 @@
-package com.mkboss.MkbossManage.Config;
+package com.mkboss.MkbossManage.Service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

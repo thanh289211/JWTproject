@@ -1,7 +1,9 @@
-package com.mkboss.MkbossManage.Auth;
+package com.mkboss.MkbossManage.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mkboss.MkbossManage.Config.JwtService;
+import com.mkboss.MkbossManage.Service.JwtService;
+import com.mkboss.MkbossManage.Dto.AuthenticationRequest;
+import com.mkboss.MkbossManage.Dto.AuthenticationResponse;
 import com.mkboss.MkbossManage.Entity.Token;
 import com.mkboss.MkbossManage.Entity.User;
 import com.mkboss.MkbossManage.Entity.VerificationToken;

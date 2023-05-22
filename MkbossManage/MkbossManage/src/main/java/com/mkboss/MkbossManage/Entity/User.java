@@ -30,6 +30,8 @@ public class User implements UserDetails {
     private Role role;
     @OneToMany(mappedBy = "user")
     private List<Token> token;
+    @OneToMany(mappedBy = "user")
+    private List<UserProduct> userProducts;
     private boolean enable = false;
 
     @Override

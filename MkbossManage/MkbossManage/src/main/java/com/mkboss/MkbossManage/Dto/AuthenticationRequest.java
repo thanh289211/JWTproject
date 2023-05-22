@@ -1,4 +1,4 @@
-package com.mkboss.MkbossManage.Auth;
+package com.mkboss.MkbossManage.Dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,7 +1,7 @@
 package com.mkboss.MkbossManage.Event.Listener;
 
-import com.mkboss.MkbossManage.Auth.AuthenticationService;
-import com.mkboss.MkbossManage.Email.EmailService;
+import com.mkboss.MkbossManage.Service.AuthenticationService;
+import com.mkboss.MkbossManage.Service.EmailService;
 import com.mkboss.MkbossManage.Entity.User;
 import com.mkboss.MkbossManage.Event.RegistrationCompleteEvent;
 import lombok.RequiredArgsConstructor;

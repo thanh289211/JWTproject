@@ -1,6 +1,6 @@
 package com.mkboss.MkbossManage;
 
-import com.mkboss.MkbossManage.Auth.AuthenticationService;
+import com.mkboss.MkbossManage.Service.AuthenticationService;
 import com.mkboss.MkbossManage.Enum.Role;
 import com.mkboss.MkbossManage.Model.UserModel;
 import org.springframework.boot.CommandLineRunner;

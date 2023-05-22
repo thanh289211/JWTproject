@@ -1,5 +1,6 @@
 package com.mkboss.MkbossManage.Config;
 
+import com.mkboss.MkbossManage.Service.LogoutService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
